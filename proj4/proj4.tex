@@ -1,0 +1,60 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[top=3cm, left=2cm, text={17cm,24cm}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{csquotes}
+\usepackage{url}
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\textsc{\Huge{Vysoké učení technické v Brně\\[0,3em]}
+{\huge{Fakulta informačních technologií}}}\\
+\vspace{\stretch{0.382}}
+{\LARGE Typografie a publikování -- 4. projekt}\\[0,3em]
+{\Huge{Typografie a citace}}\\
+\vspace{\stretch{0.618}}
+{\Large \today \hfill Richard Klem}
+\end{center}
+\end{titlepage}
+
+
+\section{Úvod}
+\justifying
+Na začátek si něco povíme o typografii, a proč je dobré o této vědní disciplíně něco vědět. V druhé části si řekneme něco k citování.
+\section{Typografie}
+Nejprve by bylo dobré pochopit, co to tygrafie vlastně je.
+
+\begin{quote}
+ \emph{\uv{Typografie je disciplína zabývající se písmem, především jeho správným výběrem, použitím a sazbou. Cílem typografie je zajistit čtenáři snazší čtení, efektivnější vnímání čteného textu a případně i vyloučit možné chyby a nejednoznačnosti plynoucí z více možných zápisů téže věty.}}\cite{Typografie}
+\end{quote}
+Tento text je sázen s pomocí \LaTeX u, což je nástroj na základu \TeX u. \TeX vytvořil pan profesor Knuth ze Stanfordské univerzite poté, co nebyl spokojen s tehdejšími sázecími nastroji.\cite{Olsak1999}
+A my mu za tento nástroj vděčíme dodnes.
+Při procházení internetu jsem narazil na web. stránce \emph{brainpickings.org}\cite{brainpicking} na zajímavý soupis deseti děl z oblasti typografie, které stojí za přečtení. Z nich mě zaujal titul s názvem \emph{Cultural Connectives}, v kterém autor rozebírá a porovnává rozdíly, ale i společné body, latinky a arabského písma. Mimo jiné se zde dozvíte, že zatímco v latince se slova do bloku sází pomocí mezer mezi slovy a písmeny nebo pomocí pomlček a půlení slova přes dva řádky, v arabském písmu se slova spojují horizontálními linkami.\cite{CulturalConnectives}
+
+\subsection{Typografie ve vysokoškolských pracích}
+Znalosti typografie se určitě hodí při práci na bakalářské nebo diplomové práci. Dříve se považovali práce vysázené například pomocé \LaTeX u za zdařilejší(z hlediska typografie) než ty napsané například v programu MS Office Word.
+
+Nyní se již tyto rozdíly ztenčují díky vyvýjejícímu se MS Office Word, nicméně stále tento trend přetrvává. Poněkud mě zarazilo, když jsem v bakalářské práci\cite{EliskaCvingrafova2011}, která se věnuje částečně i typografii, nenašel ani jednu zmínku o \LaTeX u. Naopak Martin Černý se ve své diplomové práci věnuje podrobně znakovým sadám, fontům, písmům apod. v typografických systémech, včetně \TeX u.\cite{MartinCerny1999}
+
+\section{Citování}
+V každém našem díle čerpáme z různých zdrojů. Je dobré tyto zdroje správně citovat, abychom poskytli čtenáři možnost ověřit si informace, rozšířit si znalosti apod.
+
+Mimochodem, věděli jste, že hnědí trpaslíci jsou vesmírná tělěsa velkosti mezi velkou planetou a malou hvězdou? Jejich atmosféra má podobné vlastnosti jako ta velkých plynných planet.\cite{Science1}
+Když člověk začne přemýšlet o vesmíru, často se mu z toho úplně zavaří hlava.
+O tom, co se děje v našem mozku víme mnoho, ale zdaleka ne vše. Věda jde ale stále kupředu.
+Nedávno vědci objevili novou reakci probíhající v našem mozku mezi dopaminem a chromatinem. Tyto dvě látky se spojují, a provádí doposud neznámou formu epigenetické regulace zvanou dopaminylace.\cite{Science2}
+
+Tyto a mnoho dalších zajímavých faktů ze světa vědy se lze dočíst v časopisech \emph{Science}\cite{ScienceJournal}, které vycházejí už od roku 1880.
+
+Od března roku 2011 je platná nová citační norma ČSN ISO 690. Norma má svoji vlastní webovou stránku, kde se můžete dočíst přesná pravidla a podívat se na přílady správného citování.\cite{csniso690}
+
+\newpage
+\bibliographystyle{czechiso}
+\bibliography{zdroje}
+\end{document}

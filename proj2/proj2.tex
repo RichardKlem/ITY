@@ -1,0 +1,158 @@
+\documentclass[11pt, twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage{amsthm, amssymb, amsmath}
+\usepackage{times}
+\usepackage{indentfirst}
+\usepackage{geometry}
+\usepackage[czech]{babel}
+\geometry{
+a4paper,
+total={180mm,250mm},
+left=15mm,
+top=25mm,
+}
+
+\newtheorem{theorem}{Definice}
+\newtheorem{sentence}{Věta}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\textsc{\Huge{
+Fakulta informačních technologií\\[0.4em]
+Vysoké učení technické v Brně}}\\
+\vspace{\stretch{0.382}}
+{\LARGE Typografie a publikování -- 2. projekt\\[0.3em]
+Sazba dokumentů a matematických výrazů}\\
+\vspace{\stretch{0.618}}
+{\Large 2020 \hfill Richard Klem(xklemr00)}
+\end{center}
+\end{titlepage}
+\section*{Úvod}
+\noindent V této úloze si vyzkoušíme sazbu titulní strany, matematic-\break kých vzorců, prostředí a dalších textových struktur obvyklých
+pro technicky zaměřené texty (například rovnice (\ref{eq_2}) nebo Definice \ref{def_2} na straně \pageref{def_2}). Pro vytvoření těchto odkazů
+používáme příkazy 
+\verb|\label|, \verb|\ref| a \verb|\pageref|.
+
+Na titulní straně je využito sázení nadpisu podle optického
+středu s využitím zlatého řezu. Tento postup byl
+probírán na přednášce. Dále je použito odřádkování se
+zadanou relativní velikostí 0.4em a 0.3em.
+\section{Matematický text}
+\noindent Nejprve se podíváme na sázení matematických symbolů
+a~výrazů v plynulém textu včetně sazby definic a vět s využitím
+balíku \verb|amsthm|. Rovněž použijeme poznámku pod
+čarou s použitím příkazu \verb|\footnote|. Někdy je vhodné
+použít konstrukci \verb|${}$| nebo \verb|\mbox{}|  která říká, že
+(matematický) text nemá být zalomen. V následující definici
+je nastavena mezera mezi jednotlivými položkami
+\verb|\item| na 0.05em.
+
+\begin{theorem}
+\label{def_1}
+\emph{
+Turingův stroj \emph{(TS)} \emph{je definován jako šestice
+tvaru} \(M =(Q, \Sigma, \Gamma, \delta, q_0, q_F)\),\emph{ kde:}}
+\begin{itemize}
+\setlength\itemsep{0.05em}
+\item \emph{\(Q\)\emph{ je konečná množina} vnitřních (řídicích) stavů,}
+\item \emph{\(\Sigma\) \emph{je konečná množina symbolů nazývaná} vstupní
+abeceda, \(\Delta\) \(\notin\) \(\Sigma\),}
+\item \emph{\(\Gamma\) \emph{je konečná množina symbolů, \(\Sigma\subset\Gamma\), \(\Delta\in\Gamma\),
+nazývaná} pásková abeceda,}
+\item \emph{\(\delta\) : (\(Q\setminus\{q_F\}\))\(\times\)\(\Gamma\) \(\rightarrow\) \(Q\)\(\times\)(\(\Gamma\)\(\cup\)\{\(L, R\)\}, \emph{kde L, R \(\notin\) \(\Gamma\), je parciální} přechodová funkce, \emph{a}}
+\item \emph{\(q_0 \in Q\) \emph{je} počáteční stav \emph{a} \(q_f \in Q\) \emph{je} koncový stav.}
+\end{itemize}
+
+\emph{Symbol \(\Delta\) značí tzv. \emph{blank} (prázdný symbol), který se vyskytuje na místech pásky, která nebyla ještě použita.}
+
+\emph{
+\emph{Konfigurace pásky} se skládá z nekonečného řetězce,
+který reprezentuje obsah pásky a pozice hlavy na tomto
+řetězci. Jedná se o prvek množiny
+\mbox{\(\{\gamma \Delta^{\omega}\)
+\(|\)
+\(\gamma \in \Gamma^{*}\}\times\mathbb{N}^{1}\)}.
+\emph{Konfiguraci pásky} obvykle zapisujeme jako \(\Delta xyz\underline{z}x\Delta...\)
+(podtržení značí pozici hlavy). \emph{Konfigurace stroje} je pak
+dána stavem řízení a konfigurací pásky. Formálně se jedná
+o prvek množiny \mbox{\(Q\times\{\gamma \Delta^{\omega}\) \(|\) \(\gamma \in \Gamma^{*}\}\times\mathbb{N}\)}.
+}
+\end{theorem}
+\subsection{Podsekce obsahující větu a odkaz}
+\begin{theorem}
+\label{def_2}
+\emph{Řetězec \(w\) nad abecedou \(\Sigma\) je přijat TS \emph{\(M\)
+jestliže \(M\) při aktivaci z počáteční konfigurace pásky}
+\footnotetext[1]{Pro libovolnou abecedu \(\Sigma\) je \(\Sigma^{\omega}\) množina všech nekonečných
+řetězců nad \(\Sigma\), tj. nekonečných posloupností symbolů ze \(\Sigma\).}
+\(\underline{\Delta}w\Delta...\)\emph{ a počátečního stavu \(q_0\) zastaví přechodem do koncového stavu \(q_F\), tj. (\(q_0, \Delta w\Delta^{\omega},0\)) \(\mathop{\vdash}\limits^{*}_{M}\) (\(q_F,\gamma,n\)) pro nějaké \(\gamma \in \Gamma^{*}\) a \(n \in \mathbb{N}\).}}
+
+Množinu \(L(M) = \{w \) \(|\) \(w\) je přijat TS \(M\}\subseteq\Sigma^{*}\) nazý-\break váme jazyk přijímaný TS \(M\).
+\end{theorem}
+Nyní si vyzkoušíme sazbu vět a důkazů opět s použitím balíku \verb|amsthm|.
+\begin{sentence}
+Třída jazyků, které jsou přijímány TS, odpovídá \emph{rekurzivně vyčíslitelným jazykům.}
+\end{sentence}
+\begin{proof}
+V důkaze vyjdeme z Definice \ref{def_1} a \ref{def_2}.
+\end{proof}
+\section{Rovnice}
+\noindent Složitější matematické formulace sázíme mimo plynulý text. Lze umístit několik výrazů na jeden řádek, ale pak je třeba tyto vhodně oddělit, například příkazem \verb|\quad|.
+
+\[\quad \sqrt[i]{x^3_i}\quad\text{kde }x_{i}\text{ je } i\text{-té sudé číslo}\quad y_{i}^{2\cdot y_{i}} \neq y_{i}^{y_{i}^{y_{i}}}\]
+
+V rovnici (\ref{eq_1}) jsou využity tři typy závorek s různou
+explicitně definovanou velikostí.
+\begin{equation}
+\label{eq_1}
+x \quad = \quad \bigg\{\Big(\big[a+b\big]*c\Big)^{d}\oplus 1 \bigg\}
+\end{equation}
+\begin{equation}
+\label{eq_2}
+    y \quad=\quad \lim_{x\to\infty} \frac{\sin^2x+\cos^2x}{\frac{1}{\log_{10} x}}
+\end{equation}
+
+
+
+\begin{picture}(40,40)
+    \linethickness{0.5pt}
+    \put(0,0){\line(1,0){20}}
+    \put(0,30){\line(1,0){20}}
+    \put(0,0){\line(0,1){30}}
+    \put(20,0){\line(0,1){30}}
+    \put(5,5){\line(1,0){10}}
+    \put(5,8){\line(1,0){10}}
+    \put(5,16){\line(1,0){10}}
+    \put(5,19){\line(1,0){10}}
+    \put(5,22){\line(1,0){10}}
+    \put(5,25){\line(1,0){10}}
+\end{picture}
+
+
+V této větě vidíme, jak vypadá implicitní vysázení limity
+\(\lim_{n\to\infty} f(n)\) v normálním odstavci textu. Podobně
+je to i s dalšími symboly jako \(\sum_{i=1}^{n}2^i\) či \(\bigcap_{A\in \mathcal{B}}A\). V pří-\break padě
+vzorců \(\lim\limits_{n\to\infty} f(n)\) a \(\sum\limits_{i=1}^{n}2^i\) jsme si vynutili méně
+úspornou sazbu příkazem \verb|\limits|.
+\section{Matice}
+\noindent Pro sázení matic se velmi často používá prostředí \verb|array| a závorky (\verb|\left|, \verb|\right|).
+\[
+\begin{pmatrix}
+  
+  a+b & \widehat{\xi+\omega} & \hat{\pi} \\
+     \Vec{\mathbf{a}}& \overleftrightarrow{AC} & \beta
+
+\end{pmatrix} = 1 \Longleftrightarrow \mathbb{Q} = \mathcal{R}\]
+Prostředí \verb|array| lze úspěšně využít i jinde.
+\[
+\binom{n}{k}
+=
+\left\{
+\begin{array}{cl}
+    0 & \text{pro } k  < 0 \text{ nebo }k > n\\
+    \frac{n!}{k!(n-k)!} & \text{pro }0 \leq k \leq n.
+\end{array} 
+\right.\]
+\end{document}

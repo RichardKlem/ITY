@@ -1,0 +1,113 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tabto}
+\usepackage{textcomp}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{anyfontsize}
+\usepackage{ragged2e}
+\usepackage[czech]{babel}
+ \geometry{
+ a4paper,
+ total={170mm,230mm},
+ left=20mm,
+ top=20mm,
+ }
+ 
+\setlength{\parskip}{0mm}
+
+\title{Typografie a publikování ~~1. projekt}
+\author{Richard Klem (xklemr00@stud.fit.vutbr.cz)}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\section{Hladká sazba}
+\noindent Hladká sazba používá jeden stupeň, druh a řez písma\break
+a je sázena na stanovenou šířku odstavce. Skládá\break
+se z odstavců, obvykle začínajících zarážkou, nejde-li\break
+o první odstavec za nadpisem. Mohou ale být sázeny\break
+i bez zarážky\,–\,rozhodující je celková grafická úprava.\break
+Odstavec končí východovou řádkou. Věty nesmějí za-čínat číslicí.
+
+
+Zvýraznění barvou, podtržením, ani změnou písma\break
+se v odstavcích nepoužívá. Hladká sazba je určena pře-devším
+pro delší texty, jako je beletrie. Porušení konzis-tence
+sazby působí v textu rušivě a unavuje čtenářův\break
+zrak.
+\section{Smíšená sazba}
+\noindent Smíšená sazba má o něco volnější pravidla. Klasická\break
+hladká sazba se doplňuje o další řezy písma pro zvý-\break raznění
+důležitých pojmů. Existuje „pravidlo“:
+\begin{quotation}
+{{\fontfamily{qag}\selectfont{\large{Čím více druhů,}}} {\scriptsize{\MakeUppercase{řezů}}}, {\tiny{velikostí}}, barev
+písma \underline{a jiných efektů} použijeme, tím \textit{{\large{profesionálněji}}}
+bude dokument vypadat. Čtenář
+tím bude vždy {\scriptsize{\MakeUppercase{nadšen!}}}}    
+\end{quotation}
+
+
+{\footnotesize{Tímto}} pravidlem se nikdy \textbf{nesmíte} řídit. Příliš časté
+{\large{zvýrazňování}} textových elementů a změny velikosti
+{\fontsize{20}{0}\selectfont písma} jsou známkou amatérismu autora a působí
+{\fontsize{24}{0}\selectfont velmi} rušivě. Dobře navržený dokument nemá
+obsahovat více než 4 řezy či druhy písma. Dobře navr-\breakžený
+dokument je decentní, ne chaotický.
+
+
+Důležitým znakem správně vysázeného dokumentu
+je konzistence–například \textbf{tučný řez} písma bude vy-\break hrazen
+pouze pro klíčová slova, \textit{skloněný řez} pouze\break
+pro doposud neznámé pojmy a nebude se to míchat.\break
+Skloněný řez nepůsobí tak rušivě a používá se častěji.\break
+V \LaTeX u jej sázíme raději příkazem {\fontfamily{lmtt}\selectfont \textbackslash{}emph\{text\}}než\break
+{\fontfamily{lmtt}\selectfont \textbackslash textit\{text\}}.
+
+
+Smíšená sazba se nejčastěji používá pro sazbu vědec-\break kých
+článků a technických zpráv. U delších dokumentů\break
+vědeckého či technického charakteru je zvykem vysvět-\break lit
+význam různých typů zvýraznění v úvodní kapitole.
+\section{České odlišnosti}
+\noindent Česká sazba se oproti okolnímu světu v některých\break
+aspektech mírně liší. Jednou z odlišností je sazba uvo-\break zovek.
+Uvozovky se v češtině používají převážně pro\break
+zobrazení přímé řeči, zvýraznění přezdívek a ironie.\break
+V češtině se používají uvozovky typu \uv{9966} místo “an-\break glických”
+uvozovek nebo "dvojitých"uvozovek. Lze je\break
+sázet připravenými příkazy nebo při použití UTF-8 kó-\break dování
+i přímo.\par
+Ve smíšené sazbě se řez uvozovek řídí řezem prvního\break
+uvozovaného slova. Pokud je uvozována celá věta, sází\break
+se koncová tečka před uvozovku, pokud se uvozuje slovo
+nebo část věty, sází se tečka za uvozovku.\par
+Druhou odlišností je pravidlo pro sázení konců\break
+řádků. V české sazbě by řádek neměl končit osamoce-\break nou jednopísmennou
+předložkou nebo spojkou. Spoj-\break
+kou \uv{a} končit může pouze při sazbě do šířky 25 li-\break
+ter. Abychom \LaTeX u zabránili v sázení osamocených\break
+předložek, spojujeme je s následujícím slovem \emph{nezlo-\break
+mitelnou mezerou}. Tu sázíme pomocí znaku \textbf{\textasciitilde}\ (vlnka,\break
+tilda). Pro systematické doplnění vlnek slouží volně ši-\break
+řitelný program \textit{vlna} od pana Olšáka\footnotemark[1].\par
+Balíček {\fontfamily{lmtt}\selectfont fontenc} slouží ke korektnímu kódovaní\break
+znaků s diakritikou, aby bylo možno v textu vyhledávat\break
+a kopírovat z něj.
+\section{Závěr}
+\noindent Tento dokument\footnotemark[2] je členěn na sekce pomocí příkazu\break
+\textbackslash {\fontfamily{lmtt}\selectfont
+section}. Jedna ze sekcí schválně obsahuje několik\break
+typografických prohřešků. V kontextu celého textu je\break
+jistě snadno najdete. Je dobré znát možnosti \LaTeX u,\break
+ale je také nutné vědět, kdy je nepoužít.
+
+\footnotetext[1]{
+Viz http://petr.olsak.net/ftp/olsak/vlna/}
+\footnotetext[2]{Příliš mnoho poznámek pod čarou čtenáře zbytečně rozpty-\break luje.
+Používejte je opravdu střídmě. (Šetřete i s textem v závor-\break kách.)}
+
+
+\end{document}
